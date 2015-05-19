@@ -1,5 +1,3 @@
-
-
 @size-item : 100px;
 @gutter-item : 25px;
 @nbr-item : 5;
@@ -15,66 +13,48 @@
   -webkit-filter: url("#goo");
   filter: url("../share.html#goo");
   position: relative;
-}
+  .share-button,
+  .share-toggle-button {
+    position: absolute;
+    display: inline-block;
+    left: 50%;
+    top: 50%;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    margin-left: -40px;
+    margin-top: -40px;
+    background: #ccc;
+    text-align: center;
+    color: #fff;
+    border: none;
+    outline: none;
+    &:hover {
+      color: #fff;
+    }
+  }
+  .share-button {
+    font-size: 30px;
+    background: #737070;
+    -webkit-transform: scale(0.95, 0.95);
+    transform: scale(0.95, 0.95);
+    color: #222;
+  }
+  a.share-button {
+    color: #3D4444;
+    &:hover,
+    &:focus {
+      color: #dfd7d7;
+    }
+  }
 
-.share-button,
-.share-toggle-button {
-  position: absolute;
-  display: inline-block;
-  left: 50%;
-  top: 50%;
-  border-radius: 50%;
-  width: 80px;
-  height: 80px;
-  line-height: 80px;
-  margin-left: -40px;
-  margin-top: -40px;
-  background: #ccc;
-  text-align: center;
-  color: #fff;
-  border: none;
-  outline: none;
-}
-
-.share-button:hover,
-.share-toggle-button:hover {
-  color: #fff;
-}
-
-.share-button {
-  font-size: 30px;
-  background: #737070;
-  -webkit-transform: scale(0.95, 0.95);
-  transform: scale(0.95, 0.95);
-  color: #222;
-}
-
-a.share-button {
-  color: #3D4444;
-}
-
-a.share-button:hover,
-a.share-button:focus {
-  color: #dfd7d7;
-}
-
-.share-toggle-button {
-  z-index: 9;
-  background: #666;
-  font-size: 20px;
-}
-
-.share-items {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.share-item {
-  display: inline-block;
-}
-
-.share {
+  .share-toggle-button {
+    z-index: 9;
+    background: #666;
+    font-size: 20px;
+  }
+  //Transition
   .share-toggle-button {
     transition: transform 1s ease-in-out;
     &.active {
@@ -82,31 +62,90 @@ a.share-button:focus {
     }
   }
   .share-items {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     .share-item {
+      display: inline-block;
       .share-button {
         color: #fff;
         z-index: 0;
         transform: matrix(1, 0, 0, 1, 0, 0);
-        transition: transform 1s cubic-bezier(0.75,-0.75,0.75,1.75);
+        transition: transform 0.5s linear;
       }
-      &.active {
-        &:nth-child(1) .share-button {
-          z-index: 0;
-          transform: matrix(0.6, 0, 0, 0.6, -150, 0);
-        }
-        &:nth-child(2) .share-button {
-          z-index: 0;
-          transform: matrix(0.6, 0, 0, 0.6, -75, 0);
-        }
-        &:nth-child(3) .share-button {
-          z-index: 0;
-          transform: matrix(0.6, 0, 0, 0.6, 75, 0);
-        }
-        &:nth-child(4) .share-button {
-          z-index: 0;
-          transform: matrix(0.6, 0, 0, 0.6, 150, 0);
+      &:nth-child(1) {
+        .share-button {
+          &.active {
+            z-index: 0;
+            transform: matrix(0.6, 0, 0, 0.6, -150, 0);
+          }
+          &.active-add {
+            &.active-add-active {
+              transform: matrix(0.6, 0, 0, 0.6, -230, 0);
+            }
+          }
+          &.active-remove {
+            &.active-remove-active {
+              transform: matrix(0.6, 0, 0, 0.6, -230, 0);
+            }
+          }
         }
       }
+      &:nth-child(2) {
+        .share-button {
+          &.active {
+            z-index: 0;
+            transform: matrix(0.6, 0, 0, 0.6, -75, 0);
+          }
+          &.active-add {
+            &.active-add-active {
+              transform: matrix(0.6, 0, 0, 0.6, -155, 0);
+            }
+          }
+          &.active-remove {
+            &.active-remove-active {
+              transform: matrix(0.6, 0, 0, 0.6, -155, 0);
+            }
+          }
+        }
+      }
+      &:nth-child(3) {
+        .share-button {
+          &.active {
+            z-index: 0;
+            transform: matrix(0.6, 0, 0, 0.6, 75, 0);
+          }
+          &.active-add {
+            &.active-add-active {
+              transform: matrix(0.6, 0, 0, 0.6, 155, 0);
+            }
+          }
+          &.active-remove {
+            &.active-remove-active {
+              transform: matrix(0.6, 0, 0, 0.6, 155, 0);
+            }
+          }
+        }
+      }
+      &:nth-child(4) {
+        .share-button {
+          &.active {
+            z-index: 0;
+            transform: matrix(0.6, 0, 0, 0.6, 150, 0);
+          }
+          &.active-add {
+            &.active-add-active {
+              transform: matrix(0.6, 0, 0, 0.6, 230, 0);
+            }
+          }
+          &.active-remove {
+            &.active-remove-active {
+              transform: matrix(0.6, 0, 0, 0.6, 230, 0);
+            }
+          }
+        }
+      }
+
     }
 
   }
