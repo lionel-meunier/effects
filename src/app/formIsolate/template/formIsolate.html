@@ -1,0 +1,141 @@
+<div>
+  formIsolate
+  <form novalidate ng-submit="fiCtrl.submit()" name="fiCtrl.form">
+    <div class="alert alert-success" ng-if="fiCtrl.form.$valid">Is Valid</div>
+    <div class="alert alert-danger" ng-if="fiCtrl.form.$invalid">Is Invalid</div>
+    <div class="alert alert-warning" ng-if="fiCtrl.form.$pristine">Is Pristine</div>
+    <div class="alert alert-warning" ng-if="fiCtrl.form.$dirty">Is Dirty</div>
+    <div class="alert alert-warning" ng-if="fiCtrl.form.$submitted">Is Submitted</div>
+    <div class="alert alert-danger" ng-repeat="(key,errors) in fiCtrl.form.$error">
+      <div><b>{{key}}</b></div>
+      <div data-ng-repeat="error in errors">{{error.$name}}</div>
+
+    </div>
+
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text"
+             class="form-control"
+             name="name"
+             id="name"
+             ng-model="fiCtrl.model.name"
+             required
+        />
+    </div>
+
+    <div class="btn-group checkbox">
+      <label class="btn btn-default"
+        ng-class="{'active':fiCtrl.displayForm.isolate}"
+        >
+        <input type="checkbox"
+               name="displayIsolate"
+               ng-model="fiCtrl.displayForm.isolate"
+          />
+        <span>Display Isolate</span>
+      </label>
+      <label class="btn btn-default"
+             ng-class="{'active':fiCtrl.displayForm.classic}"
+        >
+        <input type="checkbox"
+               name="displayClassic"
+               ng-model="fiCtrl.displayForm.classic"
+          />
+        <span>Display classic</span>
+      </label>
+      <label class="btn btn-default"
+             ng-class="{'active':fiCtrl.displayForm.listen}"
+        >
+        <input type="checkbox"
+               name="displayListen"
+               ng-model="fiCtrl.displayForm.listen"
+          />
+        <span>Display listen</span>
+      </label>
+    </div>
+
+
+
+    <ng-form lme-isolate-form
+             name="fiCtrl.isolateForm"
+             ng-if="fiCtrl.displayForm.isolate">
+      <div class="alert alert-success" ng-if="fiCtrl.isolateForm.$valid">Is Valid</div>
+      <div class="alert alert-danger" ng-if="fiCtrl.isolateForm.$invalid">Is Invalid</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.isolateForm.$pristine">Is Pristine</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.isolateForm.$dirty">Is Dirty</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.isolateForm.$submitted">Is Submitted</div>
+      <div class="form-group">
+        <label for="nameIsolate">nameIsolate</label>
+        <input type="text"
+               class="form-control"
+               name="nameIsolate"
+               id="nameIsolate"
+               ng-model="fiCtrl.modelIsolate.nameIsolate"
+               required
+          />
+      </div>
+      <div class="text-center">
+        <button class="btn btn-danger"
+                type="button"
+                ng-click="fiCtrl.resetIsolate()"
+          >Reset
+        </button>
+        <button
+          class="btn btn-primary"
+          type="button"
+          lme-isolate-submit="fiCtrl.submitIsolate()"
+          >Submit
+        </button>
+      </div>
+    </ng-form>
+
+    <ng-form name="fiCtrl.subFormClassic"
+             ng-if="fiCtrl.displayForm.classic">
+      <div class="alert alert-success" ng-if="fiCtrl.subFormClassic.$valid">Is Valid</div>
+      <div class="alert alert-danger" ng-if="fiCtrl.subFormClassic.$invalid">Is Invalid</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.subFormClassic.$pristine">Is Pristine</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.subFormClassic.$dirty">Is Dirty</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.subFormClassic.$submitted">Is Submitted</div>
+      <div class="form-group">
+        <label for="nameSub">nameSub</label>
+        <input type="text"
+               class="form-control"
+               name="nameSub"
+               id="nameSub"
+               ng-model="fiCtrl.model.nameSub"
+               required
+          />
+      </div>
+    </ng-form>
+
+    <ng-form lme-listen-form name="fiCtrl.subFormListen"
+             ng-if="fiCtrl.displayForm.listen">
+      <div class="alert alert-success" ng-if="fiCtrl.subFormListen.$valid">Is Valid</div>
+      <div class="alert alert-danger" ng-if="fiCtrl.subFormListen.$invalid">Is Invalid</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.subFormListen.$pristine">Is Pristine</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.subFormListen.$dirty">Is Dirty</div>
+      <div class="alert alert-warning" ng-if="fiCtrl.subFormListen.$submitted">Is Submitted</div>
+      <div class="form-group">
+        <label for="nameListen">nameListen</label>
+        <input type="text"
+               class="form-control"
+               name="nameListen"
+               id="nameListen"
+               ng-model="fiCtrl.model.nameListen"
+               required
+          />
+      </div>
+    </ng-form>
+    <div class="text-center">
+      <button class="btn btn-danger"
+              type="button"
+              ng-click="fiCtrl.reset()"
+        >Reset
+      </button>
+      <button
+        class="btn btn-primary"
+        type="submit">Submit
+      </button>
+    </div>
+  </form>
+
+</div>

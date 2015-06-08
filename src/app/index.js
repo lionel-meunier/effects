@@ -5,7 +5,8 @@ angular.module('effects', ['ngAnimate',
   'ngTouch',
   'ngSanitize',
   'ui.router',
-  'share'])
+  'share',
+  'formIsolate'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
