@@ -17,6 +17,7 @@
       };
 
       this.submit = function(){
+        $log.info('submit form model');
         if(this.form.$valid){
           $log.info('save model',this.model);
           this.save = angular.copy(this.model);
@@ -24,6 +25,7 @@
       };
 
       this.submitIsolate = function(){
+        $log.info('submit isolateForm model');
         if(this.isolateForm.$valid){
           $log.info('save isolateForm model',this.model);
           this.saveIsolate = angular.copy(this.modelIsolate);
@@ -41,5 +43,6 @@
         this.modelIsolate = angular.copy(this.saveIsolate);
         this.isolateForm.$setPristine();
       };
+
     });
 })();

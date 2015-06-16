@@ -55,8 +55,9 @@
 
 
 
-    <ng-form lme-isolate-form
+    <ng-form aqua-isolate-form
              name="fiCtrl.isolateForm"
+             aqua-submit="fiCtrl.submitIsolate()"
              ng-if="fiCtrl.displayForm.isolate">
       <div class="alert alert-success" ng-if="fiCtrl.isolateForm.$valid">Is Valid</div>
       <div class="alert alert-danger" ng-if="fiCtrl.isolateForm.$invalid">Is Invalid</div>
@@ -82,8 +83,20 @@
         <button
           class="btn btn-primary"
           type="button"
-          lme-isolate-submit="fiCtrl.submitIsolate()"
+          aqua-submit="fiCtrl.submitIsolate()"
+          aqua-submit-option="{onlyValid:true}"
+          >Submit with option
+        </button>
+        <button
+          class="btn btn-primary"
+          type="button"
+          aqua-submit="fiCtrl.submitIsolate()"
           >Submit
+        </button>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          >Submit 2
         </button>
       </div>
     </ng-form>
@@ -107,7 +120,7 @@
       </div>
     </ng-form>
 
-    <ng-form lme-listen-form name="fiCtrl.subFormListen"
+    <ng-form aqua-listen-form name="fiCtrl.subFormListen"
              ng-if="fiCtrl.displayForm.listen">
       <div class="alert alert-success" ng-if="fiCtrl.subFormListen.$valid">Is Valid</div>
       <div class="alert alert-danger" ng-if="fiCtrl.subFormListen.$invalid">Is Invalid</div>

@@ -17,11 +17,20 @@ module.exports = function(config) {
     plugins : [
       'karma-phantomjs-launcher',
       'karma-jasmine',
-      'karma-ng-html2js-preprocessor'
+      'karma-ng-html2js-preprocessor',
+      'karma-coverage'
     ],
 
+    reporters: ['progress', 'coverage'],
+
     preprocessors: {
-      'src/**/*.html': ['ng-html2js']
+      'src/**/*.html': ['ng-html2js'],
+      'src/**/!(*spec|*mock).js': ['coverage'],
+    },
+
+    coverageReporter: {
+      type : 'html',
+      dir : 'coverage/'
     }
   };
 

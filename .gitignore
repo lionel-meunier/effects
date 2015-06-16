@@ -4,5 +4,8 @@ bower_components/
 .tmp/
 dist/
 
+##TEST COVERAGE##
+coverage/
+
 ##IDEA##
 .idea/

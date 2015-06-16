@@ -18,8 +18,8 @@ module.exports = function(options) {
     var bowerDeps = wiredep(wiredepOptions);
 
     var specFiles = [
-      options.src + '/**/*.spec.js',
-      options.src + '/**/*.mock.js'
+      options.src + '/**/*.mock.js',
+      options.src + '/**/*.spec.js'
     ];
 
     var htmlFiles = [

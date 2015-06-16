@@ -6,12 +6,13 @@
   var SUBMITTED_CLASS = 'ng-submitted';
 
   angular.module('formIsolate')
-    .directive('lmeListenForm',function($animate){
+    .directive('aquaListenForm',function($animate){
       return {
         restrict: 'A',
+        scope : {},
         require: ['form', '^^?form'],
         link: function (scope, element, attrs, ctrls) {
-          if (!angular.isDefined(ctrls[1])) {
+          if (_.isNull(ctrls[1])) {
             return;
           }
           var formController = ctrls[0];
@@ -32,7 +33,6 @@
               formController.$setSubmitted(true);
             }
           });
-
           scope.$on('$destroy',function(){
             killWatch();
           });
