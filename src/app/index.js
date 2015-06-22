@@ -6,7 +6,8 @@ angular.module('effects', ['ngAnimate',
   'ngSanitize',
   'ui.router',
   'share',
-  'formIsolate'])
+  'formIsolate',
+  'aqua.sidebar'])
   .config(function ($stateProvider, $urlRouterProvider) {
     $stateProvider
       .state('home', {
