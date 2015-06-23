@@ -34,17 +34,15 @@
       $scope.isOpen = !$scope.isOpen;
     };
 
-
     $scope.$watch('isOpen', updateIsOpen);
 
     function updateIsOpen(isOpen) {
-      console.log('updateIsOpen',isOpen);
-      if(isOpen === true){
+      console.log('updateIsOpen', isOpen);
+      if (isOpen === true) {
         wrap.addClass('sidebar-open');
       } else {
         wrap.removeClass('sidebar-open');
       }
     }
   }
-
 })();

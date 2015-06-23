@@ -16,10 +16,10 @@
     '<input type="test" name="inputIsolate" ng-model="inputIsolate" required/>' +
     '</ng-form>' +
     '</form>',
-    notCtrl:'<div aqua-isolate-form></div>',
+    notCtrl: '<div aqua-isolate-form></div>',
     withSubmit: '<form name="formTop">' +
     '<ng-form name="formIsolate" aqua-isolate-form>' +
-      '<button aqua-submit="submit()"></button>' +
+    '<button aqua-submit="submit()"></button>' +
     '</ng-form>' +
     '</form>'
   };

@@ -14,7 +14,7 @@
           option: '=aquaSubmitOption'
         },
         link: function (scope, element, attrs, ctrls) {
-          _.extend(scope.option,aquaSubmitOptions.getOptions());
+          _.extend(scope.option, aquaSubmitOptions.getOptions());
           var formController,
             isForm = false;
           if (!_.isNull(ctrls[0])) {

@@ -1,7 +1,7 @@
 /**
  * Created by Lionel on 16/06/2015.
  */
-(function(){
+(function () {
   'use strict';
   window.aquaListenFormMock = window.aquaListenFormMock || {};
   window.aquaListenFormMock.template = {
@@ -9,7 +9,7 @@
     '<ng-form name="formListen" aqua-listen-form>' +
     '</ng-form>' +
     '</form>',
-    notParent:'<ng-form name="formListen" aqua-listen-form>' +
+    notParent: '<ng-form name="formListen" aqua-listen-form>' +
     '</ng-form>'
   };
 

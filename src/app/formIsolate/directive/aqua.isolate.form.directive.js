@@ -7,7 +7,6 @@
     DIRTY_CLASS = 'ng-dirty',
     SUBMITTED_CLASS = 'ng-submitted';
 
-
   angular.module('formIsolate')
     .directive('aquaIsolateForm', function ($animate) {
       return {

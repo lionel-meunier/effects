@@ -1,19 +1,18 @@
 /**
  * Created by Lionel on 22/06/2015.
  */
-(function(){
+(function () {
   'use strict';
   angular.module('aqua.sidebar')
     .controller('SidebarController', SidebarController);
 
-  SidebarController.$inject = ['$timeout'];
+  SidebarController.$inject = [];
 
-  function SidebarController($timeout){
+  function SidebarController() {
     var vm = this;
 
     vm.isOpen = false;
-    vm.isAnimating  = false;
-
+    vm.isAnimating = false;
 
     //var morphEl = document.getElementById( 'morph-shape' ),
     //  s = Snap( morphEl.querySelector( 'svg' )),
@@ -45,4 +44,3 @@
 
   }
 })();
-

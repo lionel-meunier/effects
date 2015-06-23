@@ -7,12 +7,12 @@
   angular.module('formIsolate')
     .provider('aquaSubmitOptions', AquaSubmitOptionsProvider);
 
-  function AquaSubmitOptionsProvider(){
+  function AquaSubmitOptionsProvider() {
     var options = {
-      onlyValid : true
+      onlyValid: true
     };
 
-    this.setOptions = function(newOptions){
+    this.setOptions = function (newOptions) {
       options = newOptions;
     };
 
@@ -20,14 +20,14 @@
 
     AquaSubmitOptions.$inject = [];
     /* @ngInject */
-    function AquaSubmitOptions(){
+    function AquaSubmitOptions() {
       var service = {
-        getOptions : getOptions
+        getOptions: getOptions
       };
 
       return service;
 
-      function getOptions(){
+      function getOptions() {
         return options;
       }
     }

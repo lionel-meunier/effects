@@ -8,8 +8,8 @@
       $stateProvider
         .state('formIsolate', {
           url: '/formIsolate',
-          controller:'formIsolateController',
-          controllerAs:'fiCtrl',
+          controller: 'formIsolateController',
+          controllerAs: 'fiCtrl',
           templateUrl: 'app/formIsolate/template/formIsolate.html'
         });
     });
