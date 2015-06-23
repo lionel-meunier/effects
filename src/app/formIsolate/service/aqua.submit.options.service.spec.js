@@ -21,5 +21,10 @@
       var myService = $injector.get('aquaSubmitOptions');
       expect(myService.getOptions()).toBe(newOptions);
     }));
+
+    it('should options onlyValid is default true',inject(function($injector){
+      var myService = $injector.get('aquaSubmitOptions');
+      expect(myService.getOptions().onlyValid).toBe(true);
+    }));
   });
 })();
