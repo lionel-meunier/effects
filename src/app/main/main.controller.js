@@ -42,7 +42,8 @@ angular.module('effects')
       {
         'title': 'Less',
         'url': 'http://lesscss.org/',
-        'description': 'Less extends the CSS language, adding features that allow variables, mixins, functions and many other techniques.',
+        'description': 'Less extends the CSS language, adding features that allow variables, mixins, functions ' +
+        'and many other techniques.',
         'logo': 'less.png'
       }
     ];

@@ -14,9 +14,7 @@
     "angular-ui-router": "~0.2.13",
 
     "bootstrap":"~3.3.4",
-    "font-awesome":"~4.3.0",
-
-    "Snap.svg":"0.4.1"
+    "font-awesome":"~4.3.0"
 
   },
   "devDependencies": {

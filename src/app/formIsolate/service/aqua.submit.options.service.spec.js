@@ -4,32 +4,22 @@
 (function () {
   'use strict';
 
-  angular.module('formIsolate')
-    .provider('aquaSubmitOptions', AquaSubmitOptionsProvider);
+  describe('aqua submit options provider', function () {
+    beforeEach(module('formIsolate'));
 
-  function AquaSubmitOptionsProvider(){
-    var options = {
-      onlyValid : true
-    };
+    var myProvider;
 
-    this.setOptions = function(newOptions){
-      options = newOptions;
-    };
+    beforeEach(function(){
+      module(function(aquaSubmitOptionsProvider){
+        myProvider = aquaSubmitOptionsProvider;
+      });
+    });
 
-    this.$get = AquaSubmitOptions;
-
-    AquaSubmitOptions.$inject = [];
-    /* @ngInject */
-    function AquaSubmitOptions(){
-      var service = {
-        getOptions : getOptions
-      };
-
-      return service;
-
-      function getOptions(){
-        return options;
-      }
-    }
-  }
+    it('should setOptions returned by service get options',inject(function($injector){
+      var newOptions = {};
+      myProvider.setOptions(newOptions);
+      var myService = $injector.get('aquaSubmitOptions');
+      expect(myService.getOptions()).toBe(newOptions);
+    }));
+  });
 })();

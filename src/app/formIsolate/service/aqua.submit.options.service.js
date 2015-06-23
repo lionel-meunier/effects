@@ -5,24 +5,23 @@
   'use strict';
 
   angular.module('formIsolate')
-    .provider('aquaSubmitOptions', aquaSubmitOptionsProvider);
+    .provider('aquaSubmitOptions', AquaSubmitOptionsProvider);
 
-  function aquaSubmitOptionsProvider(){
+  function AquaSubmitOptionsProvider(){
     var options = {
       onlyValid : true
     };
-    var vm = this;
 
-    vm.setOptions = function(newOptions){
+    this.setOptions = function(newOptions){
       options = newOptions;
     };
 
-    vm.$get = aquaSubmitOptions;
+    this.$get = AquaSubmitOptions;
 
-    aquaSubmitOptions.$inject = [];
+    AquaSubmitOptions.$inject = [];
     /* @ngInject */
-    function aquaSubmitOptions(){
-      var sevice = {
+    function AquaSubmitOptions(){
+      var service = {
         getOptions : getOptions
       };
 

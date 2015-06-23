@@ -7,9 +7,9 @@
   angular.module('aqua.sidebar')
     .directive('aquaSidebarContent', aquaSidebarContent);
 
-  aquaSidebarContent.$inject = ['$timeout','$animate','$parse','$log','$compile','$q','$document'];
+  aquaSidebarContent.$inject = [];
 
-  function aquaSidebarContent($timeout, $animate, $parse, $log,  $compile, $q, $document) {
+  function aquaSidebarContent() {
     return {
       restrict: 'E',
       controller: 'AquaSidebarWrapController',

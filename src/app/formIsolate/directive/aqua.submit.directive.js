@@ -5,7 +5,7 @@
   'use strict';
 
   angular.module('formIsolate')
-    .directive('aquaSubmit', function () {
+    .directive('aquaSubmit', ['aquaSubmitOptions', function (aquaSubmitOptions) {
       return {
         restrict: 'A',
         require: ['?form', '^^?form'],
@@ -14,6 +14,7 @@
           option: '=aquaSubmitOption'
         },
         link: function (scope, element, attrs, ctrls) {
+          _.extend(scope.option,aquaSubmitOptions.getOptions());
           var formController,
             isForm = false;
           if (!_.isNull(ctrls[0])) {
@@ -24,21 +25,22 @@
           } else {
             return;
           }
-          function onClick(e){
+          function onClick(e) {
             e.preventDefault();
             e.stopPropagation();
             scope.$apply(function () {
               formController.$commitViewValue();
               formController.$setSubmitted();
             });
-            if(!_.isUndefined(scope.option)){
-             if(scope.option.onlyValid === true &&
-               formController.$invalid === true ){
-               return;
-             }
+            if (!_.isUndefined(scope.option)) {
+              if (scope.option.onlyValid === true &&
+                formController.$invalid === true) {
+                return;
+              }
             }
             scope.fn({$event: e});
           }
+
           if (isForm === true) {
             element.on('click', '[type=submit]', onClick);
           } else {
@@ -46,5 +48,5 @@
           }
         }
       };
-    });
+    }]);
 })();

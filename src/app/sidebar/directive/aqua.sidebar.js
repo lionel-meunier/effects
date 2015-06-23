@@ -8,7 +8,7 @@
     .controller('AquaSidebarController', AquaSidebarController)
     .directive('aquaSidebar', aquaSidebar);
 
-  aquaSidebar.$inject = ['$timeout', '$animate', '$parse', '$log', '$compile', '$q', '$document']
+  aquaSidebar.$inject = [];
 
   function aquaSidebar() {
     return {
@@ -24,9 +24,9 @@
     };
   }
 
-  AquaSidebarController.$inject = ['$scope', '$element', '$attrs', '$q'];
+  AquaSidebarController.$inject = ['$scope', '$element'];
 
-  function AquaSidebarController($scope, $element, $attrs, $q) {
+  function AquaSidebarController($scope, $element) {
     var vm = this;
     var wrap = $element.parent('.aqua-sidebar-wrap');
 
